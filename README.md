@@ -2,7 +2,6 @@
 
 The goal of this project is to compare the power of **SVM**, **Logistic Regression**, and **BERT** in a text classification task as simple as Tweet Sentiment Analysis Classification. 
 
-
 ### What we know about the data
 
 The data was extracted from a [Sentiment140 dataset with 1.6 million tweets](https://www.kaggle.com/datasets/kazanova/sentiment140/code). It contains the following features
@@ -25,18 +24,17 @@ In this notebook we will process and transform Tweet text data by using the foll
 - Stop Words Removal
 - Contractions conversion
 
-### Text Representation
+### Feature Engineering
 
-For this project we will initially use Tf-Idf vectorization for feature engineering. In the future we might perform techniques such as Bag of Words or Word Embeddings via Word2Vec and compare scores.
-
+For this project we will initially use Tf-Idf vectorization for feature engineering. Once we have the Tf-Idf matrix ready, we will apply an SVDTransformer for dimentionality reduction.
 
 ### Validation and Evaluation
 
-I will use k-fold cross-validation to perform multiple trainings and use AUC as an evaluation metric for hyperparameyter tuning.
+I will use gridsearch and k-fold cross-validation to perform multiple trainings and use AUC as an evaluation metric for hyperparameyter tuning. In our grid search we will test multiple hyperparameters as well as regularization algorithms.
 
 ### Deployment into production with AWS Sagemaker Hosting and Visualization with AWS QuickSight
 
-The following AWS services will be used to deploy an API endpoint with Data Visualizationa and on-demand predictions:
+The following AWS services will be used to deploy an API endpoint on-demand predictions and Data Visualizations:
 
 AWS Sagemaker Hosting will deploy my ML models. For this, I will be using Docker to containerize my built inference models and deploy them in Sagemaker. I will be using A/B release strategy to load balance the traffic to different hosted inferences.
 
