@@ -4,7 +4,7 @@ The goal of this project is to compare the power of **SVM**, **Logistic Regressi
 
 ### What we know about the data
 
-The data was extracted from a [Sentiment140 dataset with 1.6 million tweets](https://www.kaggle.com/datasets/kazanova/sentiment140/code). It contains the following features
+The data was extracted from a . It contains the following features
 
 - target: the polarity of the tweet (0 = negative, 2 = neutral, 4 = positive)
 - ids: The id of the tweet ( 2087)
